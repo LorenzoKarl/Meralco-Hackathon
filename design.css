@@ -1,0 +1,109 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #09090b;
+  color: #f4f4f5;
+  font-family: 'Inter', sans-serif;
+  user-select: none;
+}
+
+/* Native Dark Map Styling */
+.leaflet-container {
+  background: #09090b !important;
+  font-family: 'Inter', sans-serif !important;
+}
+.leaflet-control-attribution {
+  background: rgba(9, 9, 11, 0.8) !important;
+  color: #52525b !important;
+  font-size: 9px !important;
+}
+.leaflet-control-attribution a {
+  color: #71717a !important;
+}
+
+/* Custom Glassmorphism HUD Panels */
+.glass-hud {
+  background: rgba(14, 14, 18, 0.82);
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.75);
+}
+.glass-hud:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+/* Custom Leaflet Dark Popups */
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: rgba(18, 18, 22, 0.95) !important;
+  color: #f4f4f5 !important;
+  border: 1px solid rgba(255, 102, 0, 0.35) !important;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.8) !important;
+  border-radius: 12px !important;
+}
+.leaflet-popup-close-button {
+  color: #a1a1aa !important;
+}
+
+/* Animated RF Link Lines */
+@keyframes rfDashFlow {
+  from { stroke-dashoffset: 24; }
+  to { stroke-dashoffset: 0; }
+}
+.rf-link-active {
+  animation: rfDashFlow 0.9s linear infinite;
+}
+
+/* Radar Pulse Animation for Gateways */
+@keyframes radarPing {
+  0% { transform: scale(0.8); opacity: 0.9; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+.gateway-pulse-ring {
+  animation: radarPing 2.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Draggable Item Cards in Dock */
+.drag-item-token {
+  cursor: grab;
+  transition: all 0.15s ease;
+}
+.drag-item-token:active {
+  cursor: grabbing;
+  transform: scale(0.96);
+}
+
+/* Map Drop Active State */
+.map-drop-highlight {
+  outline: 2px dashed #ff6600;
+  outline-offset: -6px;
+}
+
+/* Range Slider Styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #27272a;
+  border-radius: 9999px;
+  height: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ff6600;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 102, 0, 0.8);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
